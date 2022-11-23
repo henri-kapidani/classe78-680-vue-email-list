@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue email list</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+
+	<!-- axios -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+
+	<!-- vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js" defer></script>
+	<script src="js/script.js" defer></script>
+</head>
+
+<body>
+	<div id="app" v-cloak>
+		<h1>Numero di mail nell'array: {{ nMails }}</h1>
+		<button @click="getMails">Get 10 emails</button>
+		<ul v-if="arrMails.length === 10">
+			<li v-for="mail in arrMails">{{ mail }}</li>
+		</ul>
+	</div>
+</body>
+</html>
